@@ -1,0 +1,36 @@
+<ion-modal-view class="address_modal">
+
+    <div class="header_list">
+        <p>
+            {{addressOptionObj.title}}
+            <i class="icon ion-close-round" ng-click="addressObj.cancelAdd()"></i>
+        </p>
+
+    </div>
+    <div class="list_item">
+        <label for="address_name">收货人</label>
+        <input type="text" placeholder="姓名" ng-model="addressOptionObj.vname" id="address_name">
+    </div>
+    <div class="list_item">
+        <label for="address_phone">联系电话</label>
+        <input type="text" placeholder="联系电话" ng-model="addressOptionObj.tel" id="address_phone">
+    </div>
+    <div class="list_item">
+        <label>选择地址</label>
+        <!--<span>广东省</span>-->
+        <!--<span>东莞市</span>-->
+        <input type="text" ng-model="addressOptionObj.province" id="province">
+        <input type="text" ng-model="addressOptionObj.city" id="city">
+    </div>
+    <div class="list_item">
+        <label for="address_adr">详细地址</label>
+        <input type="text" placeholder="街道门牌，无需重复地区信息" ng-model="addressOptionObj.address" id="address_adr">
+    </div>
+    <div class="list_item">
+        <label for="address_code">邮政编码</label>
+        <input type="text" placeholder="邮政编码(选填)" ng-model="addressOptionObj.code" id="address_code">
+    </div>
+    <div class="last_list" ng-click="addressObj.saveAddress()">
+        <div>保&nbsp;存</div>
+    </div>
+</ion-modal-view>

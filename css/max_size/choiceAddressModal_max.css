@@ -1,0 +1,77 @@
+.choiceAddressModal{
+    width: 46rem;
+    height: 62rem;
+    position: absolute;
+    left: 0;right: 0;top: 0;bottom: 0;
+    margin: auto;
+    border: 1px solid lightgray;
+    font-size: 2.1rem;
+    background-color: white;
+    /*overflow: hidden;*/
+}
+.modal.ng-leave-active {
+    bottom: 20%;
+}
+
+.choiceAddressModal .scroll-view.scroll-y{
+    overflow-y: hidden;
+}
+
+.choiceAddressModal .choiceAddress{
+    border-bottom: 1px lightgray solid;
+}
+.choiceAddressModal .choiceAddress span{
+    font-size: 2.6rem;
+    margin-left:14%;
+    line-height: 6rem;
+}
+.choiceAddressModal .ShoppingAddress{
+    margin-left: 5%;
+    height: 54rem;
+}
+.choiceAddressModal .ShoppingAddress label{
+    width: 100%;
+    margin: 2rem 0 3rem;
+    height: 3rem;
+    position: relative;
+    display: block;
+    padding-left: 10%;
+    font-size: 2.6rem;
+}
+
+.choiceAddressModal .ShoppingAddress .radio input{
+    position: absolute;
+    left: -9999px;
+}
+.choiceAddressModal .ShoppingAddress .radio i{
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    outline: 0;
+    border: 2px solid black;
+    background: white;
+    border-radius: 50%;
+}
+.choiceAddressModal .ShoppingAddress .radio input:checked+i{
+    border-color: black;
+}
+.choiceAddressModal .ShoppingAddress .radio input+i:after{
+    position: absolute;
+    content: '';
+    top: .3rem;
+    left: .3rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: red;
+    opacity: 0;
+}
+.choiceAddressModal .ShoppingAddress .radio input:checked+i:after{
+    opacity: 1;
+}
+.blank{
+    height: 3rem;
+}

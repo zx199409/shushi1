@@ -1,0 +1,53 @@
+<ion-view view-title="myOrder" class="my_order">
+    <ion-content>
+        <div class="nav_list">
+            <ul ng-click="myOrder.navData($event)">
+                <li class="active">全&nbsp;部</li>
+                <li>待付款</li>
+                <li>待发货</li>
+                <li>待收货</li>
+                <li>待评价</li>
+            </ul>
+        </div>
+
+        <div class="order_list" ng-click="myOrder.goOrderDetail(items)" ng-repeat="items in myOrder.allData | filter:myOrder.keyWords">
+            <div class="order_num">
+                <span>订单编号&nbsp;{{items.serial}}</span>
+                <span>{{items.status}}</span>
+            </div>
+            <div class="order_item" ng-repeat="item in items.goodsArray">
+                <img ng-src="{{item.imgSrc}}">
+                <div class="order_text">
+                    <p>{{item.sname}}</p>
+                    <div class="price">
+                        <span>¥{{item.price}}</span>
+                        <span class="span_origin">¥{{item.origin}}</span>
+                        <span>×{{item.num}}</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="order_total">
+                <span>共{{items.totalNum}}件商品&nbsp;合计：
+                    <span>¥{{items.totalPrice}}</span>
+                    (含运费：{{items.freight}})
+                </span>
+            </div>
+            <div class="order_footer" ng-if="items.status=='待付款'">
+                <button class="btn" ng-click="myOrder.cancelBill(items,$event)">取消订单</button>
+                <button class="btn lone" ng-click="myOrder.payment(items,$event)">付款</button>
+            </div>
+            <div class="order_footer" ng-if="items.status=='待发货'">
+                <button class="btn lone" ng-click="myOrder.refund(items,$event)">申请退款</button>
+            </div>
+            <div class="order_footer" ng-if="items.status=='待收货'">
+                <button class="btn" ng-click="myOrder.refund(items,$event)">申请退款</button>
+                <button class="btn lone" ng-click="myOrder.confirm(items,$event)">确认收货</button>
+            </div>
+            <div class="order_footer" ng-if="items.status=='交易成功'&& !items.isAppraise">
+                <button class="btn lone" ng-click="myOrder.appraise(items,$event)">评价</button>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

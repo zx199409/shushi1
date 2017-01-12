@@ -1,0 +1,91 @@
+<ion-view>
+    <ion-content class="orderDetail-content">
+
+        <!--订单状态-->
+        <div class="order-num-wrapper row">
+            <p class="order-num">订单编号 ：3445342454</p>
+            <p class="order-status">待收货</p>
+        </div>
+
+        <!--用户信息-->
+        <div class="personal-info-wrapper">
+            <div class="row">
+                <div class="icon-address" style="background: url('images/address.png') no-repeat center;background-size: contain"></div>
+                <p class="personal-name">李先生</p>
+                <p class="personal-tel">13223077456</p>
+            </div>
+            <p class="personal-address">河南省郑州市高新区总部企业基地53号楼</p>
+        </div>
+        <!--买家留言-->
+        <div class="consumerMsg">
+            <p>买家留言</p>
+            <p>尽快发货哦 尽快发货哦 尽快发货哦 尽快发货哦 尽快发货哦 尽快发货哦 尽快发货哦</p>
+        </div>
+        <!--订单信息-->
+        <div class="my_order">
+            <div class="order_list">
+                <div class="order_num">
+                    <span>订单编号&nbsp;{{orderGoodsObj.orderData.serial}}</span>
+                    <span>{{orderGoodsObj.orderData.status}}</span>
+                </div>
+                <div class="order_item" ng-repeat="item in orderGoodsObj.orderData.goodsArray">
+                    <img class="order-goods-icon" ng-src="{{item.imgSrc}}">
+                    <div class="order_text">
+                        <p>{{item.sname}}</p>
+                        <div class="price">
+                            <span>¥{{item.price}}</span>
+                            <span>×{{item.num}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order_total">
+                <span>共{{orderGoodsObj.orderData.totalNum}}件商品&nbsp;合计：
+                    <span>¥{{orderGoodsObj.orderData.totalPrice}}</span>
+                    (含运费：{{orderGoodsObj.orderData.freight}})
+                </span>
+                </div>
+                <div class="order_footer" ng-if="orderGoodsObj.orderData.status=='待付款'">
+                    <button class="btn" ng-click="myOrder.cancelBill(items)">取消订单</button>
+                    <button class="btn lone" ng-click="myOrder.payment(items)">付款</button>
+                </div>
+                <div class="order_footer" ng-if="orderGoodsObj.orderData.status=='待发货'">
+                    <button class="btn lone" ng-click="myOrder.refund(items)">申请退款</button>
+                </div>
+                <div class="order_footer" ng-if="orderGoodsObj.orderData.status=='待收货'">
+                    <button class="btn" ng-click="myOrder.refund(items)">申请退款</button>
+                    <button class="btn lone" ng-click="myOrder.confirm(items)">确认收货</button>
+                </div>
+                <div class="order_footer" ng-if="orderGoodsObj.orderData.status=='交易成功'&& !items.isAppraise">
+                    <button class="btn lone" ng-click="myOrder.appraise(items)">评价</button>
+                </div>
+            </div>
+        </div>
+        <!--订单价格 运费-->
+        <div class="order_price_wrapper">
+            <p>
+                <span>运费</span>
+                <span>￥<span>0.00</span></span>
+            </p>
+            <p class="goods_price">
+                <span>商品金额</span>
+                <span>￥<span>255.00</span></span>
+            </p>
+            <p>
+                <span>实付款</span>
+                <span>￥<span>255.00</span></span>
+            </p>
+        </div>
+        <div class="order_logistics">
+            <p ng-if="1">物流名称 : 圆通快递</p>
+            <p ng-if="1">物流单号 ：2365989561465126345646</p>
+            <p ng-if="1">提交时间 ：<span>2016-09-28 10:23:11</span></p>
+            <p ng-if="1">付款时间 ：<span>2016-09-28 10:23:11</span></p>
+            <p ng-if="1">发货时间 ：<span>2016-09-28 10:23:11</span></p>
+            <p ng-if="1">成交时间 ：<span>2016-09-28 10:23:11</span></p>
+            <p ng-if="1">交易关闭时间 ：<span>2016-09-28 10:23:11</span></p>
+            <p ng-if="1">申请退款时间 ：<span>2016-09-28 10:23:11</span></p>
+            <p ng-if="1">退款成功时间 ：<span>2016-09-28 10:23:11</span></p>
+
+        </div>
+    </ion-content>
+</ion-view>

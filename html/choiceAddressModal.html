@@ -1,0 +1,39 @@
+<ion-modal-view class="choiceAddModal" style="background-color: rgba(0,0,0,.3);font-family: 微软雅黑" >
+    <!--承载模态窗口的页面必须写上class=“modal”  不写没有动画-->
+
+
+        <div class="choiceAddressModal">
+
+            <div class="choiceAddress">
+                <span>选择省份</span>
+            </div>
+            <ion-scroll
+            direction="y" scrollbar-y="false">
+            <div class="ShoppingAddress"
+            ng-click="napaStores.changeAddress($event)">
+                    <!--<label class="radio" ng-repeat="city in address"><input name="address" type="radio" checked="checked"><i></i> {{city}}</label>-->
+                    <label class="radio"><input name="address" type="radio" value="" checked="checked" ><i></i> 河南省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 河北省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 湖南省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 四川省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 海南省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 广西省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 广东省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 黑龙江省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 甘肃省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 辽宁省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 安徽省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 湖北省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 甘肃省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 甘肃省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 甘肃省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 甘肃省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 甘肃省</label>
+                    <label class="radio"><input name="address" type="radio" value=""><i></i> 甘肃省</label>
+                <div class="blank"></div>
+            </div>
+            </ion-scroll>
+        </div>
+
+
+</ion-modal-view>
